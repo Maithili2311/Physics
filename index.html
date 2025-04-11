@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formula Master - Physics Formulas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="theme-switch">
+        <i class="fas fa-moon"></i>
+    </div>
+
+    <div class="particles" id="particles-js"></div>
+
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <i class="fas fa-atom fa-spin"></i>
+                <h1>Formula Master</h1>
+            </div>
+            <p class="typewriter">Your Complete Physics Formula Reference</p>
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search formulas...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="filter-tags">
+                    <span class="filter-tag active" data-filter="all">All</span>
+                    <span class="filter-tag" data-filter="basics">Basics</span>
+                    <span class="filter-tag" data-filter="advanced">Advanced</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="category-nav">
+        <div class="nav-container">
+            <button class="category-btn active" onclick="showCategory('mechanics')">
+                <i class="fas fa-cog fa-spin-hover"></i>
+                <span>Mechanics</span>
+                <div class="tooltip">Classical & Modern Mechanics</div>
+            </button>
+            <button class="category-btn" onclick="showCategory('thermodynamics')">
+                <i class="fas fa-temperature-high"></i>
+                <span>Thermodynamics</span>
+                <div class="tooltip">Heat & Energy</div>
+            </button>
+            <button class="category-btn" onclick="showCategory('electricity')">
+                <i class="fas fa-bolt"></i>
+                <span>Electricity</span>
+                <div class="tooltip">Electric & Magnetic Fields</div>
+            </button>
+            <button class="category-btn" onclick="showCategory('waves')">
+                <i class="fas fa-wave-square"></i>
+                <span>Waves & Optics</span>
+                <div class="tooltip">Wave Mechanics & Light</div>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <div class="visualization-toggle">
+            <button class="viz-btn active" data-view="cards">
+                <i class="fas fa-th"></i> Cards
+            </button>
+            <button class="viz-btn" data-view="list">
+                <i class="fas fa-list"></i> List
+            </button>
+        </div>
+
+        <section id="mechanics" class="formula-section active">
+            <h2><i class="fas fa-cog"></i> Mechanics Formulas</h2>
+            <div class="formula-grid">
+                <div class="formula-card" data-category="mechanics" data-difficulty="basics">
+                    <div class="card-header">
+                        <h3>Newton's Laws</h3>
+                        <div class="card-actions">
+                            <button class="favorite-btn" title="Add to favorites">
+                                <i class="far fa-star"></i>
+                            </button>
+                            <button class="share-btn" title="Share formula">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="formula-container">
+                        <div class="formula">F = ma</div>
+                        <div class="formula-copy">
+                            <button class="copy-btn" title="Copy formula">
+                                <i class="far fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <p>Force equals mass times acceleration</p>
+                    <div class="interactive-demo">
+                        <div class="demo-container">
+                            <canvas class="demo-canvas"></canvas>
+                            <div class="demo-controls">
+                                <input type="range" class="demo-slider" min="1" max="10" value="5">
+                                <button class="demo-play">Play Animation</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="details-btn">Learn More</button>
+                        <div class="tags">
+                            <span class="tag">Force</span>
+                            <span class="tag">Motion</span>
+                            <span class="difficulty-tag basic">Basic</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="formula-card" data-category="mechanics">
+                    <div class="card-header">
+                        <h3>Kinetic Energy</h3>
+                        <button class="favorite-btn"><i class="far fa-star"></i></button>
+                    </div>
+                    <div class="formula">KE = ½mv²</div>
+                    <p>Kinetic energy equals half mass times velocity squared</p>
+                    <div class="card-footer">
+                        <button class="details-btn">Learn More</button>
+                        <div class="tags">
+                            <span>Energy</span>
+                            <span>Motion</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="formula-card" data-category="mechanics">
+                    <div class="card-header">
+                        <h3>Potential Energy</h3>
+                        <button class="favorite-btn"><i class="far fa-star"></i></button>
+                    </div>
+                    <div class="formula">PE = mgh</div>
+                    <p>Gravitational potential energy equals mass times gravity times height</p>
+                    <div class="card-footer">
+                        <button class="details-btn">Learn More</button>
+                        <div class="tags">
+                            <span>Energy</span>
+                            <span>Gravity</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="thermodynamics" class="formula-section">
+            <h2><i class="fas fa-temperature-high"></i> Thermodynamics Formulas</h2>
+            <div class="formula-grid">
+                <div class="formula-card" data-category="thermodynamics">
+                    <div class="card-header">
+                        <h3>Heat Transfer</h3>
+                        <button class="favorite-btn"><i class="far fa-star"></i></button>
+                    </div>
+                    <div class="formula">Q = mcΔT</div>
+                    <p>Heat equals mass times specific heat capacity times change in temperature</p>
+                    <div class="card-footer">
+                        <button class="details-btn">Learn More</button>
+                        <div class="tags">
+                            <span>Heat</span>
+                            <span>Energy</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="formula-card" data-category="thermodynamics">
+                    <div class="card-header">
+                        <h3>Ideal Gas Law</h3>
+                        <button class="favorite-btn"><i class="far fa-star"></i></button>
+                    </div>
+                    <div class="formula">PV = nRT</div>
+                    <p>Pressure times volume equals number of moles times gas constant times temperature</p>
+                    <div class="card-footer">
+                        <button class="details-btn">Learn More</button>
+                        <div class="tags">
+                            <span>Gas</span>
+                            <span>Pressure</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="electricity" class="formula-section">
+            <h2><i class="fas fa-bolt"></i> Electricity Formulas</h2>
+            <div class="formula-grid">
+                <div class="formula-card" data-category="electricity">
+                    <div class="card-header">
+                        <h3>Ohm's Law</h3>
+                        <button class="favorite-btn"><i class="far fa-star"></i></button>
+                    </div>
+                    <div class="formula">V = IR</div>
+                    <p>Voltage equals current times resistance</p>
+                    <div class="card-footer">
+                        <button class="details-btn">Learn More</button>
+                        <div class="tags">
+                            <span>Voltage</span>
+                            <span>Current</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="formula-card" data-category="electricity">
+                    <div class="card-header">
+                        <h3>Electric Power</h3>
+                        <button class="favorite-btn"><i class="far fa-star"></i></button>
+                    </div>
+                    <div class="formula">P = VI</div>
+                    <p>Power equals voltage times current</p>
+                    <div class="card-footer">
+                        <button class="details-btn">Learn More</button>
+                        <div class="tags">
+                            <span>Power</span>
+                            <span>Energy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="waves" class="formula-section">
+            <h2><i class="fas fa-wave-square"></i> Waves & Optics Formulas</h2>
+            <div class="formula-grid">
+                <div class="formula-card" data-category="waves">
+                    <div class="card-header">
+                        <h3>Wave Speed</h3>
+                        <button class="favorite-btn"><i class="far fa-star"></i></button>
+                    </div>
+                    <div class="formula">v = fλ</div>
+                    <p>Wave velocity equals frequency times wavelength</p>
+                    <div class="card-footer">
+                        <button class="details-btn">Learn More</button>
+                        <div class="tags">
+                            <span>Waves</span>
+                            <span>Velocity</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="formula-card" data-category="waves">
+                    <div class="card-header">
+                        <h3>Snell's Law</h3>
+                        <button class="favorite-btn"><i class="far fa-star"></i></button>
+                    </div>
+                    <div class="formula">n₁sinθ₁ = n₂sinθ₂</div>
+                    <p>Law of refraction relating angles and refractive indices</p>
+                    <div class="card-footer">
+                        <button class="details-btn">Learn More</button>
+                        <div class="tags">
+                            <span>Refraction</span>
+                            <span>Optics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal" id="detailsModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <h3>Formula Details</h3>
+                <div id="modalContent"></div>
+                <div class="modal-tabs">
+                    <button class="tab-btn active" data-tab="explanation">Explanation</button>
+                    <button class="tab-btn" data-tab="examples">Examples</button>
+                    <button class="tab-btn" data-tab="calculator">Calculator</button>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="explanation"></div>
+                    <div class="tab-pane" id="examples"></div>
+                    <div class="tab-pane" id="calculator">
+                        <div class="calculator-form">
+                            <!-- Dynamic calculator fields will be inserted here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Initialize particles background
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: '#ffffff' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5, random: false },
+                size: { value: 3, random: true },
+                line_linked: { enable: true, distance: 150, color: '#ffffff', opacity: 0.4, width: 1 },
+                move: { enable: true, speed: 6, direction: 'none', random: false, straight: false, out_mode: 'out', bounce: false }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: { enable: true, mode: 'repulse' },
+                    onclick: { enable: true, mode: 'push' },
+                    resize: true
+                }
+            },
+            retina_detect: true
+        });
+
+        // Theme switcher with enhanced animation
+        const themeSwitch = document.querySelector('.theme-switch');
+        themeSwitch.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+            const icon = themeSwitch.querySelector('i');
+            icon.style.transform = 'rotate(360deg)';
+            setTimeout(() => {
+                icon.classList.toggle('fa-moon');
+                icon.classList.toggle('fa-sun');
+                icon.style.transform = '';
+            }, 200);
+            updateParticlesColor();
+        });
+
+        // Category switching
+        function showCategory(category) {
+            document.querySelectorAll('.formula-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(category).classList.add('active');
+            
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.closest('.category-btn').classList.add('active');
+        }
+
+        // Enhanced search with highlighting
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            document.querySelectorAll('.formula-card').forEach(card => {
+                const text = card.textContent.toLowerCase();
+                const match = text.includes(searchTerm);
+                card.style.display = match ? 'block' : 'none';
+                if (match && searchTerm) {
+                    highlightText(card, searchTerm);
+                } else {
+                    removeHighlight(card);
+                }
+            });
+        });
+
+        // Filter tags functionality
+        document.querySelectorAll('.filter-tag').forEach(tag => {
+            tag.addEventListener('click', () => {
+                document.querySelectorAll('.filter-tag').forEach(t => t.classList.remove('active'));
+                tag.classList.add('active');
+                const filter = tag.dataset.filter;
+                filterFormulas(filter);
+            });
+        });
+
+        // View toggle functionality
+        document.querySelectorAll('.viz-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.viz-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const view = btn.dataset.view;
+                document.querySelector('.formula-grid').classList.toggle('list-view', view === 'list');
+            });
+        });
+
+        // Copy formula functionality
+        document.querySelectorAll('.copy-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const formula = btn.closest('.formula-container').querySelector('.formula').textContent;
+                navigator.clipboard.writeText(formula).then(() => {
+                    const icon = btn.querySelector('i');
+                    icon.classList.remove('far', 'fa-copy');
+                    icon.classList.add('fas', 'fa-check');
+                    setTimeout(() => {
+                        icon.classList.remove('fas', 'fa-check');
+                        icon.classList.add('far', 'fa-copy');
+                    }, 2000);
+                });
+            });
+        });
+
+        // Share functionality
+        document.querySelectorAll('.share-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const card = btn.closest('.formula-card');
+                const formula = card.querySelector('.formula').textContent;
+                const title = card.querySelector('h3').textContent;
+                if (navigator.share) {
+                    navigator.share({
+                        title: 'Formula Master - ' + title,
+                        text: Check out this physics formula: ${formula},
+                        url: window.location.href
+                    });
+                }
+            });
+        });
+
+        // Helper functions
+        function highlightText(element, term) {
+            const regex = new RegExp((${term}), 'gi');
+            element.querySelectorAll('h3, p, .formula').forEach(el => {
+                const text = el.textContent;
+                el.innerHTML = text.replace(regex, '<mark>$1</mark>');
+            });
+        }
+
+        function removeHighlight(element) {
+            element.querySelectorAll('mark').forEach(mark => {
+                const text = mark.textContent;
+                mark.replaceWith(text);
+            });
+        }
+
+        function filterFormulas(filter) {
+            document.querySelectorAll('.formula-card').forEach(card => {
+                card.style.display = 
+                    filter === 'all' || card.dataset.difficulty === filter ? 'block' : 'none';
+            });
+        }
+
+        function updateParticlesColor() {
+            const isDark = document.body.classList.contains('dark-theme');
+            pJSDom[0].pJS.particles.color.value = isDark ? '#4a90e2' : '#1e3c72';
+            pJSDom[0].pJS.particles.line_linked.color = isDark ? '#4a90e2' : '#1e3c72';
+            pJSDom[0].pJS.fn.particlesRefresh();
+        }
+    </script>
+</body>
+</html>
+<style>
+    :root {
+    --primary-color: #1e3c72;
+    --secondary-color: #2a5298;
+    --accent-color: #4a90e2;
+    --text-color: #333;
+    --bg-color: #f5f5f5;
+    --card-bg: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    --gradient-accent: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --border-radius: 15px;
+}
+
+.dark-theme {
+    --primary-color: #4a90e2;
+    --secondary-color: #357abd;
+    --accent-color: #64b5f6;
+    --text-color: #e1e1e1;
+    --bg-color: #1a1a1a;
+    --card-bg: #2d2d2d;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: var(--transition);
+    overflow-x: hidden;
+}
+
+/* Particles Background */
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Theme Switch */
+.theme-switch {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: var(--card-bg);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    transition: var(--transition);
+}
+
+.theme-switch:hover {
+    transform: scale(1.1) rotate(180deg);
+    box-shadow: 0 6px 20px var(--shadow-color);
+}
+
+.theme-switch i {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    transition: var(--transition);
+}
+
+/* Header Styles */
+header {
+    background: var(--gradient-primary);
+    color: white;
+    padding: 3rem 1rem;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 1rem;
+}
+
+.logo i {
+    font-size: 2.5rem;
+    animation: glowing 2s infinite;
+}
+
+@keyframes glowing {
+    0% { filter: drop-shadow(0 0 5px rgba(255,255,255,0.5)); }
+    50% { filter: drop-shadow(0 0 20px rgba(255,255,255,0.8)); }
+    100% { filter: drop-shadow(0 0 5px rgba(255,255,255,0.5)); }
+}
+
+.logo h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.typewriter {
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: 2px;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-right-color: transparent }
+    50% { border-right-color: white }
+}
+
+/* Search and Filter Styles */
+.search-container {
+    max-width: 600px;
+    margin: 2rem auto 0;
+}
+
+.search-box {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 15px 45px 15px 20px;
+    border: none;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1.1rem;
+    backdrop-filter: blur(10px);
+    transition: var(--transition);
+}
+
+.search-box input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 20px rgba(255,255,255,0.1);
+}
+
+.search-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 1.2rem;
+}
+
+.filter-tags {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.filter-tag {
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    cursor: pointer;
+    transition: var(--transition);
+    backdrop-filter: blur(5px);
+}
+
+.filter-tag:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.filter-tag.active {
+    background: white;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+/* Navigation Styles */
+.category-nav {
+    background: var(--card-bg);
+    padding: 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.category-btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: var(--border-radius);
+    background: var(--bg-color);
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+}
+
+.category-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+.category-btn.active {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+.category-btn .tooltip {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    background: var(--card-bg);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.category-btn:hover .tooltip {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+}
+
+/* Formula Cards */
+.formula-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.formula-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 1.2rem;
+    box-shadow: 0 2px 8px var(--shadow-color);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.formula-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--gradient-accent);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.formula-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+.formula-card:hover::before {
+    opacity: 1;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    position: relative;
+    z-index: 1;
+}
+
+.card-header h3 {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.card-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.favorite-btn, .share-btn, .copy-btn {
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: var(--transition);
+    padding: 0.5rem;
+    border-radius: 50%;
+}
+
+.favorite-btn:hover, .share-btn:hover, .copy-btn:hover {
+    transform: scale(1.2);
+    background: rgba(74, 144, 226, 0.1);
+}
+
+.formula-container {
+    background: var(--bg-color);
+    border-radius: 8px;
+    padding: 0.8rem;
+    margin: 0.8rem 0;
+    position: relative;
+    z-index: 1;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.formula {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: center;
+    color: var(--primary-color);
+    line-height: 1.4;
+}
+
+.formula-copy {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.8rem;
+}
+
+.tag {
+    background: var(--bg-color);
+    color: var(--text-color);
+    padding: 0.15rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.difficulty-tag {
+    padding: 0.15rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+.difficulty-tag.basic {
+    background: #4caf50;
+    color: white;
+}
+
+.difficulty-tag.advanced {
+    background: #f44336;
+    color: white;
+}
+
+/* Interactive Demo */
+.interactive-demo {
+    margin: 1rem 0;
+    background: var(--bg-color);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.demo-container {
+    padding: 1rem;
+}
+
+.demo-canvas {
+    width: 100%;
+    height: 150px;
+    background: var(--card-bg);
+    border-radius: 8px;
+}
+
+.demo-controls {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.demo-slider {
+    flex: 1;
+    height: 5px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--primary-color);
+    border-radius: 5px;
+    outline: none;
+}
+
+.demo-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 5px var(--shadow-color);
+}
+
+.demo-play {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.demo-play:hover {
+    background: var(--secondary-color);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: var(--transition);
+}
+
+.close-modal:hover {
+    transform: rotate(90deg);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .logo h1 {
+        font-size: 2rem;
+    }
+
+    .category-nav {
+        padding: 0.5rem;
+    }
+
+    .category-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .formula-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .formula {
+        font-size: 1.2rem;
+    }
+
+    .modal-content {
+        padding: 1.5rem;
+    }
+}
+
+/* List View */
+.formula-grid.list-view {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.list-view .formula-card {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 2rem;
+}
+
+.list-view .card-header {
+    margin-bottom: 0;
+}
+
+.list-view .formula-container {
+    margin: 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.formula-section {
+    animation: fadeIn 0.5s ease;
+}
+
+/* Mark highlight */
+mark {
+    background: var(--accent-color);
+    color: white;
+    padding: 0 4px;
+    border-radius: 4px;
+}
+</style>
